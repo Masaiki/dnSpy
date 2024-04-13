@@ -57,7 +57,7 @@ jobs:
         run: Copy-Item -Path dnSpy\dnSpy\bin\Release\${{matrix.build-dir}}\* -Destination C:\builtfiles\dnSpy-${{matrix.platform}} -Recurse
 
       - uses: actions/upload-artifact@v4.3.0
-        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
+        if: github.ref == 'refs/heads/feature/new-ilspy'
         with:
           name: dnSpy-${{matrix.package-name}}
           path: C:\builtfiles\dnSpy-${{matrix.platform}}
